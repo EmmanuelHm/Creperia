@@ -1,6 +1,6 @@
 <h1 class="text-white mb-4 text-center">Carrito de Compras</h1>
 
-<a href="<?=base_url?>carrito/index" class="btn red mt-4 mb-5">Regresar al menu</a>
+<a href="<?=base_url?>menu/index" class="btn red mt-4 mb-5">Regresar al menu</a>
 
 <?php if( isset($_SESSION['carrito']) && count($_SESSION['carrito']) >= 1 ): ?>
 
