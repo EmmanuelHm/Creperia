@@ -91,7 +91,7 @@ class Usuario{
             if($this->getImagen() != null){
                 $sql.=", '{$this->getImagen()}'";
             }
-            $sql.=");";
+            $sql.=", null);";
 
             $save = $this->db->query($sql);
 
