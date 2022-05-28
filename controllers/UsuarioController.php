@@ -77,16 +77,19 @@ class usuarioController{
                     $_SESSION['register'] = "Complete";
 
                     if( Utils::isAdmin() ){
-                        header("Location:".base_url.'usuario/index');
+                        //header("Location: ".base_url.'usuario/index', true);
+                        echo "<script>window.location='".base_url."usuario/index';</script>";
                         Utils::deleteSession('register');
                     }
                     else{
-                        header("Location:".base_url.'usuario/sesion');
+                        //echo "<script>window.location='".base_url."usuario/sesion';</script>";
+                        header("Location: ".base_url.'usuario/sesion', true);
                     }
                 }
                 else{
                     $_SESSION['register'] = "Failed";
-                    header("Location:".base_url.'usuario/registro');
+                    //header("Location: ".base_url.'usuario/registro', true);
+                    echo "<script>window.location='".base_url."usuario/registro';</script>";
                 }
             }
             else{
@@ -116,11 +119,13 @@ class usuarioController{
                 if($identity->rol == 'admin'){
                     $_SESSION['admin'] = true;
                 }
-                header('Location:'.base_url.'usuario/index');
+                //header('Location: '.base_url.'usuario/index', true);
+                echo "<script>window.location='".base_url."usuario/index';</script>";
             }
             else{
                 $_SESSION['error_login'] = "Identificación Fallida.";
-                header('Location:'.base_url.'usuario/sesion');
+                //header('Location: '.base_url.'usuario/sesion', true);
+                echo "<script>window.location='".base_url."usuario/sesion';</script>";
             }
         }
     }
@@ -132,7 +137,8 @@ class usuarioController{
         if( isset($_SESSION['admin']) ){
             unset($_SESSION['admin']);
         }
-        header('Location:'.base_url);
+        //header('Location: '.base_url, true);
+        echo "<script>window.location='".base_url."';</script>";
     }
 
     public function editar(){
@@ -154,7 +160,8 @@ class usuarioController{
             require_once 'views/usuario/registro.php';
         }
         else{
-            header('Location:'.base_url.'usuario/index');
+            //header('Location: '.base_url.'usuario/index', true);
+            echo "<script>window.location='".base_url."usuario/index';</script>";
         }
     }
 
@@ -181,6 +188,7 @@ class usuarioController{
             $_SESSION['delete'] = 'Failed';
 
         }
-        header('Location:'.base_url.'usuario/index');
+        //header('Location: '.base_url.'usuario/index', true);
+        echo "<script>window.location='".base_url."usuario/index';</script>";
     }
 }

@@ -73,16 +73,19 @@ class productoController{
                     $_SESSION['register'] = "Complete";
 
                     if( Utils::isAdmin() ){
-                        header("Location:".base_url.'producto/index');
+                        //header("Location:".base_url.'producto/index');
+                        echo "<script>window.location='".base_url."producto/index';</script>";
                         Utils::deleteSession('register');
                     }
                     else{
-                        header("Location:".base_url.'usuario/sesion');
+                        //header("Location:".base_url.'usuario/sesion');
+                        echo "<script>window.location='".base_url."usuario/sesion';</script>";
                     }
                 }
                 else{
                     $_SESSION['register'] = "Failed";
-                    header("Location:".base_url.'usuario/registro');
+                    //header("Location:".base_url.'usuario/registro');
+                    echo "<script>window.location='".base_url."usuario/registro';</script>";
                 }
             }
             else{
@@ -113,7 +116,8 @@ class productoController{
             require_once 'views/producto/form.php';
         }
         else{
-            header('Location:'.base_url.'producto/index');
+            //header('Location:'.base_url.'producto/index');
+            echo "<script>window.location='".base_url."producto/index';</script>";
         }
     }
 
@@ -140,6 +144,7 @@ class productoController{
             $_SESSION['delete'] = 'Failed';
 
         }
-        header('Location:'.base_url.'producto/index');
+        //header('Location:'.base_url.'producto/index');
+        echo "<script>window.location='".base_url."producto/index';</script>";
     }
 }

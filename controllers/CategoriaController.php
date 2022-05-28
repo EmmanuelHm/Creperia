@@ -67,16 +67,19 @@ class categoriaController{
                     $_SESSION['register'] = "Complete";
 
                     if( Utils::isAdmin() ){
-                        header("Location:".base_url.'categoria/index');
+                        //header("Location:".base_url.'categoria/index');
+                        echo "<script>window.location='".base_url."categoria/index';</script>";
                         Utils::deleteSession('register');
                     }
                     else{
-                        header("Location:".base_url.'usuario/sesion');
+                        //header("Location:".base_url.'usuario/sesion');
+                        echo "<script>window.location='".base_url."usuario/sesion';</script>";
                     }
                 }
                 else{
                     $_SESSION['register'] = "Failed";
-                    header("Location:".base_url.'usuario/registro');
+                    //header("Location:".base_url.'usuario/registro');
+                    echo "<script>window.location='".base_url."usuario/registro';</script>";
                 }
             }
             else{
@@ -107,7 +110,8 @@ class categoriaController{
             require_once 'views/categoria/form.php';
         }
         else{
-            header('Location:'.base_url.'categoria/index');
+            //header('Location:'.base_url.'categoria/index');
+            echo "<script>window.location='".base_url."categoria/index';</script>";
         }
     }
 
@@ -134,8 +138,7 @@ class categoriaController{
             $_SESSION['delete'] = 'Failed';
 
         }
-        header('Location:'.base_url.'categoria/index');
+        //header('Location:'.base_url.'categoria/index');
+        echo "<script>window.location='".base_url."categoria/index';</script>";
     }
-
-
 }

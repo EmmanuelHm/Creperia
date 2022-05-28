@@ -11,7 +11,8 @@ class Utils{
 
     public static function isAdmin(){
         if(!isset($_SESSION['admin'])){
-            header('Location:'.base_url);
+            //header('Location:'.base_url);
+            echo "<script>window.location='".base_url."';</script>";
         }
         else{
             return true;
@@ -20,7 +21,8 @@ class Utils{
 
     public static function isIdentity(){
         if(!isset($_SESSION['identity'])){
-            header('Location:'.base_url);
+            //header('Location:'.base_url);
+            echo "<script>window.location='".base_url."';</script>";
         }
         else{
             return true;

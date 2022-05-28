@@ -47,7 +47,8 @@ class pedidoController{
                     $_SESSION['pedido'] = "Failed";
                     
                 }
-                header('Location:'.base_url.'pedido/confirmado');
+                //header('Location:'.base_url.'pedido/confirmado');
+                echo "<script>window.location='".base_url."pedido/confirmado';</script>";
             }
             else{
                 $_SESSION['pedido'] = "Failed";
@@ -55,7 +56,8 @@ class pedidoController{
 
         }else{
             // Redirigir al index
-            header('Location:'.base_url);
+            //header('Location:'.base_url);
+            echo "<script>window.location='".base_url."';</script>";
         }
     }
 
@@ -110,7 +112,8 @@ class pedidoController{
             require_once 'views/pedido/detalle.php';
         }
         else{
-            header('Location:'.base_url.'pedido/mis_pedidos');
+            //header('Location:'.base_url.'pedido/mis_pedidos');
+            echo "<script>window.location='".base_url."pedido/mis_pedidos';</script>";
         }
     }
 
@@ -141,10 +144,12 @@ class pedidoController{
             $pedido->setEstatus($estado);
             $pedido->edit();
 
-            header('Location:'.base_url.'pedido/detalle&id='.$id);
+            //header('Location:'.base_url.'pedido/detalle&id='.$id);
+            echo "<script>window.location='".base_url."pedido/detalle&id=".$id."';</script>";
         }
         else{
-            header('Location:'.base_url);
+            //header('Location:'.base_url);
+            echo "<script>window.location='".base_url."';</script>";
         }
     }
 }
