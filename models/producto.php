@@ -137,4 +137,9 @@ class Producto{
         return $result;
     }
 
+    public function search(){
+        $sql = "SELECT * FROM productos WHERE nombre LIKE '%{$this->getNombre()}%' ORDER BY id DESC";
+        $res = $this->db->query($sql);
+        return $res;
+    }
 }

@@ -82,5 +82,8 @@
 
         </div>
 
+        <!-- Cargar la buscador -->
+        <?php require_once 'views/layout/buscador.php'; ?>
+
         <!-- Principal -->
         <main id="principal">
