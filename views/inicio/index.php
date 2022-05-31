@@ -7,7 +7,7 @@
         <h2 class="fs-1">
             <strong>¡Bienvenidos!</strong>
         </h2>
-        <p class="mt-4 text-center fs-3">
+        <p class="mt-4 text-center">
             En Crepería Van Gogh podrás encontrar una gran variedad de ricos postres y bebidas frías o calientes para todos los gustos.
             <br/>
             Deleita tu paladar con nuestra deliciosa crepa "Noches Estrellada".

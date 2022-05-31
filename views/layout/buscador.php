@@ -2,7 +2,7 @@
 
 <div id="search" class="p-3">
     <form action="<?=base_url?>buscador/index" method="POST">
-        <input type="search" name="search"  placeholder="Buscar porducto" required>
+        <input type="search" name="search"  placeholder="Buscar producto" required>
         <input type="submit"  class="m-2" value="Buscar" >
     </form>
 </div>

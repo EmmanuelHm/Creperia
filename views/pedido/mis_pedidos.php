@@ -4,7 +4,7 @@
     <h1 class="text-white mb-5 text-center">Mis Pedidos</h1>
 <?php endif; ?>
 
-<table class="table text-center table-dark table-striped table-hover">
+<table class="table text-center table-dark table-striped table-hover" id="table_ped">
 
     <thead class="fs-4">
         <tr>
@@ -25,7 +25,7 @@
             <td><?= $pedido->fecha ?></td>
             <td><?= Utils::showStatus($pedido->estatus) ?></td>
             <td>
-                <a href="<?=base_url?>pedido/detalle&id=<?=$pedido->id?>" class="btn green btn-sm">
+                <a href="<?=base_url?>pedido/detalle&id=<?=$pedido->id?>" class="btn green btn-sm" id="detail-btn">
                     Ver Pedido
                 </a>
             </td>

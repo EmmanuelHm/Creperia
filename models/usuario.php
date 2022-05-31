@@ -89,9 +89,14 @@ class Usuario{
             $sql = "INSERT INTO usuarios VALUES(null, '{$this->getNombre()}', '{$this->getApellidos()}', '{$this->getEmail()}', '{$this->getPassword()}', 'user'";
 
             if($this->getImagen() != null){
-                $sql.=", '{$this->getImagen()}'";
+                $sql.=", '{$this->getImagen()}');";
             }
-            $sql.=", null);";
+            else{
+                $sql.=", null);";
+            }
+
+            // printf($sql);
+            // die();
 
             $save = $this->db->query($sql);
 
@@ -126,7 +131,7 @@ class Usuario{
     }
 
     public function getAll(){
-        $usuarios = $this->db->query("SELECT * FROM usuarios ORDER BY id ASC LIMIT 12");
+        $usuarios = $this->db->query("SELECT * FROM usuarios ORDER BY id DESC LIMIT 12");
         return $usuarios;
     }
 

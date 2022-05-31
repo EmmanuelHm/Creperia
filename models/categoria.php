@@ -35,7 +35,7 @@ class Categoria{
 
     // Methods
     public function getAll(){
-        $categorias = $this->db->query("SELECT * FROM categorias ORDER BY id ASC;");
+        $categorias = $this->db->query("SELECT * FROM categorias ORDER BY id DESC;");
         return $categorias;
     }
 
@@ -47,10 +47,16 @@ class Categoria{
     public function save(){
         $sql = "INSERT INTO categorias VALUES(null, '{$this->getNombre()}'";
         if($this->getImagen() != null){
-            $sql.=", '{$this->getImagen()}'";
+            $sql.=", '{$this->getImagen()}');";
+            // printf($sql);
+            // die();
+        }else{
+            $sql.=", null);";
+            // printf($sql);
+            // die();
         }
-        $sql.=");";
-
+        // printf($sql);
+        // die();
         $save = $this->db->query($sql);
 
         $result = false;

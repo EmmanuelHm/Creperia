@@ -172,6 +172,7 @@ class usuarioController{
         if( isset($_GET['id']) ){
             // Obtener id
             $id = $_GET['id'];
+
             $usuario = new Usuario();
             $usuario->setId($id);
 
@@ -186,7 +187,6 @@ class usuarioController{
         }
         else{
             $_SESSION['delete'] = 'Failed';
-
         }
         //header('Location: '.base_url.'usuario/index', true);
         echo "<script>window.location='".base_url."usuario/index';</script>";
