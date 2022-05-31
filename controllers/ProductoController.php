@@ -20,6 +20,13 @@ class productoController{
         require_once 'views/producto/form.php';
     }
 
+    public function info(){
+        // Verificamos si es admin
+        Utils::isAdmin();
+        $productos = Utils::countProducts();
+        require_once 'views/producto/info.php';
+    }
+
     public function save(){
 
         if( isset($_POST) ){

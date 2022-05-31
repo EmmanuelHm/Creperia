@@ -4,6 +4,10 @@
     Crear Producto
 </a>
 
+<a href="<?=base_url?>producto/info" class="btn btn-primary mb-4 ms-2">
+    Gráfica de Productos
+</a>
+
 <?php if($productos->num_rows == 0): ?>
     <h1 class="mb-4 text-center text-danger">Aun no hay Productos</h1>
 <?php else: ?>

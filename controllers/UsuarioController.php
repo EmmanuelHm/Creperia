@@ -61,7 +61,7 @@ class usuarioController{
                 }
 
                 if(isset($_GET['id'])){
-                    // Actualizar producto
+                    // Actualizar usuario
                     $id = $_GET['id'];
                     $usuario->setId($id);
                     $rol = isset($_POST['rol']) ? $_POST['rol'] : false;
@@ -81,10 +81,8 @@ class usuarioController{
                         echo "<script>window.location='".base_url."usuario/index';</script>";
                         Utils::deleteSession('register');
                     }
-                    else{
-                        //echo "<script>window.location='".base_url."usuario/sesion';</script>";
-                        header("Location: ".base_url.'usuario/sesion', true);
-                    }
+                    // header("Location: ".base_url.'usuario/sesion', true);
+                    echo "<script>window.location='".base_url."usuario/sesion';</script>";
                 }
                 else{
                     $_SESSION['register'] = "Failed";

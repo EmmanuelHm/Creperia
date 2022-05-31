@@ -69,4 +69,14 @@ class Utils{
 
         return $value;
     }
+
+    public static function countProducts(){
+        // Obtener Conexion DB
+        $db = Database::connect();
+        // Consulta
+        $sql = "SELECT f.producto_id, p.nombre AS 'producto', SUM(f.cantidad) AS 'cantidad' FROM facturas f, productos p WHERE f.producto_id = p.id GROUP BY f.producto_id ORDER BY cantidad DESC LIMIT 10;";
+
+        $productos = $db->query($sql);
+        return $productos;
+    }
 }

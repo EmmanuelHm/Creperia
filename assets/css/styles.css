@@ -14,6 +14,16 @@ a{
     font-family: 'Bellerose';
     src: url('../../assets/fonts/Bellerose.ttf');
 }
+
+/* Grafica Productos */
+.chart {
+    width: 100%; 
+    min-height: 450px;
+}
+.row {
+    margin:0 !important;
+}
+
 :root{ --header-color-bg: #06053A; }
 .green{ background-color: #247f24 !important; }
 .green:hover{ background-color: #146014 !important; }
