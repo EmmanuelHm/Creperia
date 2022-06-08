@@ -13,6 +13,7 @@
                 <?php endif; ?>
                 <h3><?=$prod->nombre?></h3>
                 <p><?=$prod->descripcion?></p>
+                <h5>Categoría: <strong><?=$prod->categoria?></strong></h5>
                 <p>
                     <strong>$ <?=$prod->precio?> m.x.</strong>
                 </p>

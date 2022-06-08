@@ -138,7 +138,10 @@ class Producto{
     }
 
     public function search(){
-        $sql = "SELECT * FROM productos WHERE nombre LIKE '%{$this->getNombre()}%' ORDER BY id DESC";
+        // $sql = "SELECT * FROM productos WHERE nombre LIKE '%{$this->getNombre()}%' ORDER BY id DESC";
+        $sql = "SELECT p.*, c.nombre as 'categoria' FROM productos p
+        INNER JOIN categorias c ON p.categoria_id = c.id
+        WHERE p.nombre LIKE '%{$this->getNombre()}%' OR c.nombre LIKE '%{$this->getNombre()}'";
         $res = $this->db->query($sql);
         return $res;
     }
