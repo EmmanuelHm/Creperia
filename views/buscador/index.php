@@ -1,4 +1,4 @@
-<h1 class="text-white mb-4 text-center">Resultados sobre: <?=$search?></h1>
+<h1 class="text-white mb-4 text-center">Resultados sobre: '<?=$search?>'</h1>
 
 <?php if($productos->num_rows >= 1): ?>
 
