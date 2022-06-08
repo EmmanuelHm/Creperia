@@ -140,7 +140,7 @@ class Producto{
     public function search(){
         $sql = "SELECT p.*, c.nombre as 'categoria' FROM productos p
         INNER JOIN categorias c ON p.categoria_id = c.id
-        WHERE p.nombre LIKE '%{$this->getNombre()}%' OR c.nombre LIKE '%{$this->getNombre()}'";
+        WHERE p.nombre LIKE '%{$this->getNombre()}%' OR c.nombre LIKE '%{$this->getNombre()}%'";
         $res = $this->db->query($sql);
         return $res;
     }
